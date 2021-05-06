@@ -15,13 +15,13 @@ const webpack = require('webpack');
 mix.webpackConfig({
         plugins: [
             new webpack.DefinePlugin({
-                __VUE_OPTIONS_API__: false,
+                __VUE_OPTIONS_API__: true,
                 __VUE_PROD_DEVTOOLS__: false,
             }),
         ],
     })
     .js('resources/js/app.js', 'public/js')
-    .vue()
+    .vue({ version: 3 })
     .postCss('resources/css/app.css', 'public/css', [
         require("tailwindcss"),
     ]);
