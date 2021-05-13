@@ -20,8 +20,8 @@ mix.webpackConfig({
             }),
         ],
     })
-    .js('resources/js/app.js', 'public/js')
+    .js('resources/js/public_SPA/app.js', 'public/js')
     .vue({ version: 3 })
-    .postCss('resources/css/app.css', 'public/css', [
+    .postCss('resources/css/public_SPA/app.css', 'public/css', [
         require("tailwindcss"),
     ]);

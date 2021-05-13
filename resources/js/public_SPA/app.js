@@ -4,10 +4,11 @@
  * building robust, powerful web applications using Vue and Laravel.
  */
 
-require('./bootstrap');
+require('../bootstrap');
 
-import { createApp } from 'vue'
-import ExampleComponent from './components/ExampleComponent'
+import { createApp } from 'vue';
+import router from "./router";
+
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -15,8 +16,6 @@ import ExampleComponent from './components/ExampleComponent'
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-createApp({
-    components: {
-        ExampleComponent,
-    }
-}).mount('#app')
+const app = createApp({
+    components: {}
+}).use(router).mount('#app');

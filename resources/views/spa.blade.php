@@ -10,12 +10,15 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <link rel="stylesheet" href="{{ mix('css/app.css') }}">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
 
 </head>
 <body>
 
     <div id="app">
-        <example-component></example-component>
+
+        <router-view :key="$route.path"></router-view>
+
     </div>
     
 
