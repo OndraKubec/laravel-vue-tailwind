@@ -6,7 +6,7 @@ export default [
     },
     {
         path: '/about',
-        component: () => import(/* webpackChunkName: "home" */ "../views/About"),
+        component: () => import(/* webpackChunkName: "about" */ "../views/About"),
         name: 'about'
     }
 ];
