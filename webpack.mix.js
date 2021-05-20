@@ -1,5 +1,6 @@
 const mix = require('laravel-mix');
 const webpack = require('webpack');
+const tailwindcss = require('tailwindcss');
 
 /*
  |--------------------------------------------------------------------------
@@ -12,16 +13,25 @@ const webpack = require('webpack');
  |
  */
 
+
 mix.webpackConfig({
-        plugins: [
-            new webpack.DefinePlugin({
-                __VUE_OPTIONS_API__: true,
-                __VUE_PROD_DEVTOOLS__: false,
-            }),
-        ],
-    })
-    .js('resources/js/public_SPA/app.js', 'public/js')
-    .vue({ version: 3 })
-    .postCss('resources/css/public_SPA/app.css', 'public/css', [
-        require("tailwindcss"),
-    ]);
+    plugins: [
+        new webpack.DefinePlugin({
+            __VUE_OPTIONS_API__: true,
+            __VUE_PROD_DEVTOOLS__: false,
+        }),
+    ],
+})
+// SPA
+.js('resources/js/public_SPA/app.js', 'public/js')
+.vue({ version: 3 })
+.postCss('resources/css/public_SPA/app.css', 'public/css', [
+    require("tailwindcss"),
+])
+// ADMINISTRATION
+.js('resources/js/admin/admin.js', 'public/js')
+.postCss('resources/css/admin/admin.css', 'public/css', [
+    require('postcss-import'),
+    [tailwindcss('./tailwind-admin.config.js')],
+    require('autoprefixer'),
+]);

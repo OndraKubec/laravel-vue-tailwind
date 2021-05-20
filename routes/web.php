@@ -18,5 +18,11 @@ use App\Http\Controllers\SpaController;
     return view('welcome');
 }); */
 
+Route::get('/admin', function () {
+    return view('dashboard');
+})->middleware(['auth'])->name('dashboard');
+
+require __DIR__.'/auth.php';
 
 Route::get('/{any}', [SpaController::class, 'index'])->where('any', '.*');
+
