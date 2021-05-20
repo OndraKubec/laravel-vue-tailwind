@@ -18,7 +18,7 @@
                 </li>
             </ul>
             <!-- Mobile links -->
-            <transition name="fade">
+            <transition name="slide">
                 <div v-if="navOpen" id="mobile-links" class="block lg:hidden absolute w-screen h-screen left-0 top-0 z-10">
                     <ul class="mobile-ul float-right flex flex-col bg-ct-black h-screen w-3/5 sm:w-1/2 text-2xl md:text-3xl my-auto">
                         <li class="lg:hidden h-20 flex flex-col justify-center ml-auto">
@@ -65,15 +65,15 @@ export default {
 </script>
 
 <style scoped>
-    .fade-enter-active{
-        animation: fade 1s;
+    .slide-enter-active{
+        animation: slide 1s;
     }
 
-    .fade-leave-active{
-        animation: fade 1s reverse;
+    .slide-leave-active{
+        animation: slide 1s reverse;
     }
 
-    @keyframes fade {
+    @keyframes slide {
         0%{
             transform: translateX(100%);
         }

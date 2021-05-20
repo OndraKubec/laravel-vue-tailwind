@@ -19,7 +19,7 @@
 
         <nav-component></nav-component>
 
-        <router-view :key="$route.path"></router-view>
+        <view-component></view-component>
 
     </div>
     
