@@ -16766,7 +16766,7 @@ var render = /*#__PURE__*/_withId(function (_ctx, _cache, $props, $setup, $data,
         width: "30",
         height: "30",
         viewBox: "0 0 19.243 19.243"
-      }, [_hoisted_9]))]), ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($data.navRoutes, function (navRoute) {
+      }, [_hoisted_9]))]), ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($data.navRoutes.slice(0, -1), function (navRoute) {
         return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("li", {
           onClick: _cache[3] || (_cache[3] = function ($event) {
             return $data.navOpen = !$data.navOpen;
@@ -16948,6 +16948,12 @@ __webpack_require__.r(__webpack_exports__);
     return __webpack_require__.e(/*! import() | about */ "about").then(__webpack_require__.bind(__webpack_require__, /*! ../views/About */ "./resources/js/public_SPA/views/About.vue"));
   },
   name: 'about'
+}, {
+  path: '/:pathMatch(.*)*',
+  component: function component() {
+    return __webpack_require__.e(/*! import() | notFound */ "notFound").then(__webpack_require__.bind(__webpack_require__, /*! ../views/NotFound */ "./resources/js/public_SPA/views/NotFound.vue"));
+  },
+  name: '404'
 }]);
 
 /***/ }),
@@ -49584,7 +49590,7 @@ function compileToFunction(template, options) {
 /******/ 		__webpack_require__.u = (chunkId) => {
 /******/ 			// return url for filenames not based on template
 /******/ 			if (chunkId === "home") return "js/home.js";
-/******/ 			if (chunkId === "about") return "js/" + chunkId + ".js";
+/******/ 			if ({"about":1,"notFound":1}[chunkId]) return "js/" + chunkId + ".js";
 /******/ 			// return url for filenames based on template
 /******/ 			return undefined;
 /******/ 		};

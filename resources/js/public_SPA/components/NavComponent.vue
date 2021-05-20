@@ -29,7 +29,7 @@
                                 </g>
                             </svg>
                         </li>
-                        <li @click="navOpen = !navOpen" v-for="navRoute in navRoutes" :key="navRoute.path" class="inline leading-loose">
+                        <li @click="navOpen = !navOpen" v-for="navRoute in navRoutes.slice(0,-1)" :key="navRoute.path" class="inline leading-loose">
                             <router-link :to="navRoute.path">{{navRoute.name}}</router-link>
                         </li>
                     </ul>

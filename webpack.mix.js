@@ -22,7 +22,7 @@ mix.webpackConfig({
         }),
     ],
 })
-// SPA
+// PUBLIC SPA
 .js('resources/js/public_SPA/app.js', 'public/js')
 .vue({ version: 3 })
 .postCss('resources/css/public_SPA/app.css', 'public/css', [
