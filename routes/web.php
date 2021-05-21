@@ -14,15 +14,27 @@ use App\Http\Controllers\SpaController;
 |
 */
 
-/* Route::get('/', function () {
-    return view('welcome');
-}); */
+Route::prefix('admin')->group(function () {
 
-Route::get('/admin', function () {
-    return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
+    Route::middleware(['auth'])->group(function () {
+        
+        Route::get('/', function () {
+            return view('dashboard');
+        })->name('dashboard');
 
-require __DIR__.'/auth.php';
+        Route::get('/about', function () {
+            return view('about');
+        })->name('about');
+
+    });
+
+    require __DIR__.'/auth.php';
+
+    Route::get('/{any}', function () {
+        return view('404');
+    })->middleware('auth')->where('any', '.*');
+    
+});
 
 Route::get('/{any}', [SpaController::class, 'index'])->where('any', '.*');
 
