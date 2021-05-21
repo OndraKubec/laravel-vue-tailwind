@@ -24,6 +24,14 @@ Route::prefix('admin')->group(function () {
 
         Route::get('/about', function () {
             return view('about');
+        })->middleware('admin')->name('about');
+
+    });
+
+    Route::middleware(['auth','admin'])->group(function () {
+
+        Route::get('/about', function () {
+            return view('about');
         })->name('about');
 
     });
@@ -31,7 +39,7 @@ Route::prefix('admin')->group(function () {
     require __DIR__.'/auth.php';
 
     Route::get('/{any}', function () {
-        return view('404');
+        abort(404);
     })->middleware('auth')->where('any', '.*');
     
 });
