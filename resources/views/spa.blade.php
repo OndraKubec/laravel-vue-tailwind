@@ -16,7 +16,6 @@
 <body>
 
     <div id="app">
-
         <nav-component></nav-component>
 
         <view-component></view-component>
