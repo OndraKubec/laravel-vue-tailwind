@@ -22,10 +22,6 @@ Route::prefix('admin')->group(function () {
             return view('dashboard');
         })->name('dashboard');
 
-        Route::get('/about', function () {
-            return view('about');
-        })->middleware('admin')->name('about');
-
     });
 
     Route::middleware(['auth','admin'])->group(function () {
