@@ -1,9 +1,9 @@
 {
-    "/js/app.js": "/js/app.js",
-    "/js/admin.js": "/js/admin.js",
-    "/js/home.js": "/js/home.js",
-    "/js/about.js": "/js/about.js",
-    "/js/notFound.js": "/js/notFound.js",
-    "/css/app.css": "/css/app.css",
-    "/css/admin.css": "/css/admin.css"
+    "/js/app.js": "/js/app.js?id=6e7fd2482d887db73460",
+    "/js/admin.js": "/js/admin.js?id=418cc25a52a881af99a1",
+    "/js/home.js": "/js/home.js?id=652938b733d64e63dbf1",
+    "/js/about.js": "/js/about.js?id=d2a10eba3c13963e314d",
+    "/js/notFound.js": "/js/notFound.js?id=85249f80af7ff88f86ae",
+    "/css/app.css": "/css/app.css?id=39f7ce8c2c403aa9a5bf",
+    "/css/admin.css": "/css/admin.css?id=d6b6f093f6ae5dc718e2"
 }

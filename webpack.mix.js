@@ -22,12 +22,14 @@ mix.webpackConfig({
         }),
     ],
 })
+
 // PUBLIC SPA
 .js('resources/js/public_SPA/app.js', 'public/js')
 .vue({ version: 3 })
 .postCss('resources/css/public_SPA/app.css', 'public/css', [
     require("tailwindcss"),
 ])
+
 // ADMINISTRATION
 .js('resources/js/admin/admin.js', 'public/js')
 .postCss('resources/css/admin/admin.css', 'public/css', [
@@ -35,3 +37,8 @@ mix.webpackConfig({
     [tailwindcss('./tailwind-admin.config.js')],
     require('autoprefixer'),
 ]);
+
+// version files in production mode
+if (mix.inProduction()) {
+    mix.version();
+}
