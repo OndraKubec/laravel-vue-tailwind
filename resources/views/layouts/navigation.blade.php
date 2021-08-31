@@ -16,13 +16,16 @@
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                         {{ __('Dashboard') }}
                     </x-nav-link>
+                    <x-nav-link :href="route('home')" :active="request()->routeIs('home')">
+                        {{ __('Home page') }}
+                    </x-nav-link>
+                    <x-nav-link :href="route('about')" :active="request()->routeIs('about')">
+                        {{ __('About page') }}
+                    </x-nav-link>
                     <!-- Links for admins -->
                     @if (auth()->user()->is_admin == 1)
                     <x-nav-link :href="route('register')" :active="request()->routeIs('register')">
                         {{ __('Add User') }}
-                    </x-nav-link>
-                    <x-nav-link :href="route('about')" :active="request()->routeIs('about')">
-                        {{ __('About page') }}
                     </x-nav-link>
                     @endif
                 </div>

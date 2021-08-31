@@ -39,7 +39,6 @@ services:
           test: ["CMD", "mysqladmin", "ping"]
     phpmyadmin:
         image: phpmyadmin/phpmyadmin
-        restart: always
         environment:
             - PMA_HOST=${DB_HOST}
         ports:

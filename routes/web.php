@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SpaController;
+use App\Http\Controllers\TaskCMSController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,13 +23,15 @@ Route::prefix('admin')->group(function () {
             return view('dashboard');
         })->name('dashboard');
 
-    });
-
-    Route::middleware(['auth','admin'])->group(function () {
+        Route::get('/home', [TaskCMSController::class, 'index'])->name('home');
 
         Route::get('/about', function () {
             return view('about');
         })->name('about');
+
+    });
+
+    Route::middleware(['auth','admin'])->group(function () {
 
     });
 
