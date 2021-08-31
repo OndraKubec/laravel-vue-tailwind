@@ -21,6 +21,9 @@ mix.webpackConfig({
             __VUE_PROD_DEVTOOLS__: false,
         }),
     ],
+    output: {
+        chunkFilename: '[name].js?id=[chunkhash]',
+    }
 })
 
 // PUBLIC SPA
